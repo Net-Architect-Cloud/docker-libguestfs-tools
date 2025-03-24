@@ -15,8 +15,7 @@ ENV LIBGUESTFS_BACKEND=direct \
     LIBGUESTFS_DEBUG=0 \
     LIBGUESTFS_TRACE=0 \
     LIBGUESTFS_PROGRESS=1 \
-    LIBGUESTFS_VERBOSE=0 \
-    LIBGUESTFS_MEMSIZE=500
+    LIBGUESTFS_VERBOSE=0
 
 # Installing dependencies and cleaning up in a single step to reduce image size
 # Optimization options:
