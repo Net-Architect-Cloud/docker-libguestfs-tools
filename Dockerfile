@@ -4,7 +4,6 @@ FROM rockylinux/rockylinux:9-minimal
 # Maintainer information
 LABEL maintainer="kevin@netarchitect.cloud"
 LABEL description="Container with libguestfs, qemu and image manipulation tools"
-LABEL version="1.0"
 
 # Environment configuration for libguestfs
 # - BACKEND=direct: Uses direct backend (no nested VM)
@@ -17,7 +16,6 @@ ENV LIBGUESTFS_BACKEND=direct \
     LIBGUESTFS_TRACE=0 \
     LIBGUESTFS_PROGRESS=1 \
     LIBGUESTFS_VERBOSE=0 \
-    LIBGUESTFS_MEMSIZE=500
 
 # Installing dependencies and cleaning up in a single step to reduce image size
 # Optimization options:
