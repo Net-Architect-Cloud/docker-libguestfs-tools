@@ -48,6 +48,7 @@ RUN microdnf -y install dnf && \
         openssh-clients \
         file \
         procps-ng \
+	wget \
         iproute && \
     # Aggressive cleanup to reduce image size
     dnf clean all && \
