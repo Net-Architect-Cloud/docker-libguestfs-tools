@@ -10,12 +10,13 @@ LABEL description="Container with libguestfs, qemu and image manipulation tools"
 # - DEBUG/TRACE: Disabled to reduce noise
 # - PROGRESS: Enabled to show progress
 # - VERBOSE: Disabled for minimal output
-# - MEMSIZE: 500MB for basic operations
 ENV LIBGUESTFS_BACKEND=direct \
     LIBGUESTFS_DEBUG=0 \
     LIBGUESTFS_TRACE=0 \
     LIBGUESTFS_PROGRESS=1 \
-    LIBGUESTFS_VERBOSE=0
+    LIBGUESTFS_VERBOSE=0 \
+    LIBGUESTFS_MEMSIZE=4096 \
+    LIBGUESTFS_SMP=4
 
 # Installing dependencies and cleaning up in a single step to reduce image size
 # Optimization options:
@@ -32,6 +33,7 @@ RUN microdnf -y install dnf && \
         libguestfs \
         libguestfs-tools-c \
         virt-v2v \
+	libvirt-daemon-kvm \
         # System and network tools
         curl \
         tar \
