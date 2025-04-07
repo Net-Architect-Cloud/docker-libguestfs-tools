@@ -59,6 +59,9 @@ RUN microdnf -y install dnf && \
     # Create working directory
     mkdir -p /workspace/images
 
+# Define shared volume
+VOLUME ["/shared"]
+
 # Set working directory
 WORKDIR /workspace
 
