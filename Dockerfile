@@ -57,10 +57,11 @@ RUN microdnf -y install dnf && \
     rm -rf /var/cache/dnf /var/cache/yum /var/log/* /tmp/* /var/tmp/* && \
     rm -rf /usr/share/{doc,man,info}/* && \
     # Create working directory
-    mkdir -p /workspace/images
+    mkdir -p /workspace/images /workspace/shared 
+
 
 # Define shared volume
-VOLUME ["/shared"]
+VOLUME ["/workspace/shared"]
 
 # Set working directory
 WORKDIR /workspace
