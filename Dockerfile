@@ -50,6 +50,7 @@ RUN microdnf -y install dnf && \
         file \
         procps-ng \
         git \
+        kmod \
 	wget \
         iproute && \
     # Aggressive cleanup to reduce image size
